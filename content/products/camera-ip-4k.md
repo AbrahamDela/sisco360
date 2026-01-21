@@ -1,8 +1,8 @@
 ---
-title: JC261 External Version
-description: Cámara de seguridad 4K de la marca jimmi resistente al agua, ideal
-  para vigilancia residencial y comercial en Nicaragua. Visión nocturna,
-  detección de movimiento y acceso remoto.
+title: Cámara de salpicadero - JIMI IOT JC261
+description: Cámara de seguridad de la marca jimmi, ideal para vigilancia de
+  vehículos en tiempo real. Visión nocturna, detección de movimiento, gps y
+  acceso remoto.
 price: 139
 category: Cámaras IP
 image: https://cardashcam.co.za/wp-content/uploads/2024/10/Jc261-1.webp
@@ -18,4 +18,4 @@ specs: |-
   SOS
   Locked SIM/ TF Card Design
 ---
-Esta cámara IP de última generación ofrece una claridad de imagen excepcional. Protege tu hogar en o tu negocio en cualquier parte de Nicaragua con la mejor tecnología.
+Esta cámara IP de última generación ofrece una claridad de imagen excepcional. Protege tu flota vehicular en cualquier parte de Nicaragua con la mejor tecnología.
