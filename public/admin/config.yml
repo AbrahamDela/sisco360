@@ -1,0 +1,77 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "products"
+    label: "Productos"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nombre", name: "title", widget: "string"}
+      - {label: "Descripción SEO", name: "description", widget: "text"}
+      - {label: "Precio", name: "price", widget: "number", valueType: "float"}
+      - {label: "Categoría", name: "category", widget: "select", options: ["Residencial", "Comercial", "Industrial", "Cámaras IP", "Analógica", "Kits", "Accesorios"]}
+      - {label: "Imagen Principal", name: "image", widget: "image"}
+      - {label: "Stock", name: "stock", widget: "number", default: 0}
+      - {label: "Video Demo (URL)", name: "video", widget: "string", required: false}
+      - {label: "Características Técnicas", name: "specs", widget: "markdown", required: false}
+      - {label: "Cuerpo", name: "body", widget: "markdown", required: false}
+
+  - name: "packages"
+    label: "Paquetes"
+    folder: "content/packages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nombre del Paquete", name: "title", widget: "string"}
+      - {label: "Descripción Corta", name: "description", widget: "text"}
+      - {label: "Precio", name: "price", widget: "number", valueType: "float"}
+      - {label: "Tipo", name: "type", widget: "select", options: ["Residencial", "Empresarial"]}
+      - {label: "Imagen", name: "image", widget: "image"}
+      - {label: "Productos Incluidos", name: "items", widget: "list", field: {label: "Producto/Servicio", name: "item", widget: "string"}}
+      - {label: "Detalles Adicionales", name: "body", widget: "markdown", required: false}
+
+  - name: "posts"
+    label: "Blog"
+    folder: "content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Fecha de Publicación", name: "date", widget: "datetime"}
+      - {label: "Autor", name: "author", widget: "string", default: "SISCO360 Team"}
+      - {label: "Categoría", name: "category", widget: "select", options: ["Consejos de Seguridad", "Novedades Tecnológicas", "Guías de Instalación", "Casos de Éxito"]}
+      - {label: "Etiquetas", name: "tags", widget: "list"}
+      - {label: "Imagen Destacada", name: "thumbnail", widget: "image"}
+      - {label: "Extracto", name: "excerpt", widget: "text"}
+      - {label: "Cuerpo", name: "body", widget: "markdown"}
+
+  - name: "pages"
+    label: "Páginas Estáticas"
+    files:
+      - file: "content/pages/home.md"
+        label: "Página de Inicio"
+        name: "home"
+        fields:
+          - {label: "Título Hero", name: "hero_title", widget: "string"}
+          - {label: "Subtítulo Hero", name: "hero_subtitle", widget: "string"}
+          - {label: "Imagen Hero", name: "hero_image", widget: "image"}
+          - {label: "Paquetes Destacados", name: "featured_packages", widget: "relation", collection: "packages", search_fields: ["title"], value_field: "slug", display_fields: ["title"], multiple: true, required: false}
+
+      - file: "content/settings/contact.json"
+        label: "Configuración de Contacto"
+        name: "contact"
+        fields:
+          - {label: "Teléfono (Mostrar)", name: "phone_display", widget: "string", default: "+505 8482-7719"}
+          - {label: "Teléfono (Link/Whatsapp)", name: "phone_link", widget: "string", default: "50584827719", hint: "Solo números, sin espacios ni símbolos"}
+          - {label: "Correo Electrónico", name: "email", widget: "string", default: "ventas@sisco360.com"}
+          - {label: "Dirección", name: "address", widget: "string", default: "Km 4.5 Carretera a Masaya, Managua, Nicaragua"}
+          - {label: "Facebook URL", name: "facebook_url", widget: "string", required: false}
+          - {label: "Instagram URL", name: "instagram_url", widget: "string", required: false}
+          - {label: "TikTok URL", name: "tiktok_url", widget: "string", required: false}
+          - {label: "Google Maps Embed URL", name: "map_url", widget: "string", required: false}
