@@ -12,6 +12,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "SISCO360 | Sistemas de Seguridad en Nicaragua",
   description: "Líder en cámaras de seguridad y vigilancia en Nicaragua.",
+  icons: {
+    icon: '/images/centro_sisco360.svg',
+    shortcut: '/images/centro_sisco360.svg',
+    apple: '/images/centro_sisco360.svg',
+  },
 };
 
 export default async function RootLayout({
